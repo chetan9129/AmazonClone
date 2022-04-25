@@ -5,6 +5,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Checkout from "./Checkout";
 import { useStateValue } from "./StateProvider";
+import Login from "./Login"; 
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -13,8 +14,11 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/login">
+            <Login/>
+          </Route>
           <Route path="/checkout">
-            <Header></Header>
+            <Header />
             <Checkout></Checkout>
           </Route>
           {/* This is the default route */}
